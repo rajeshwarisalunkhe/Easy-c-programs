@@ -37,20 +37,20 @@ int main(void)
 // hcf of two numbers is the largest positive divisior of that two numbers
 int hcf(int x, int y)
 {
-	int quotient, reminder = 1;
+	int quotient, remainder = 1;
 
-	// according to euclid division algorithm one no can be expressed in form of athor no as follows
-	// dividend = (devisor * quotient) + reminder
-	// applying division algorithm to devisor and reminder again treating devisor as dividend and reminder as divisor
-	// until reminder is zero and when the reminder is zero the hcf is devisor at that stage
-	while( reminder > 0)
+	// according to euclid division algorithm one no can be expressed in form of another no as follows
+	// dividend = (divisor * quotient) + remainder
+	// applying division algorithm to divisor and remainder again treating divisor as dividend and remainder as divisor
+	// until remainder is zero and when the remainder is zero the hcf is divisor at that stage
+	while( remainder > 0)
 	{
 		quotient = x / y;
-		reminder = x - (quotient * y);
+		remainder = x - (quotient * y);
 		
-		// hcf is y which is a devisior when reminder is zero
+		// hcf is y which is a divisior when remainder is zero
 		x = y;
-		y = reminder;
+		y = remainder;
 	}
 			
 	return x;
