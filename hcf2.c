@@ -6,7 +6,7 @@ int hcf(int x, int y);
 
 int main(void)
 {
-	int first, second, temp;
+	int first, second;
 
 	printf("enter two numbers:");
 	scanf("%d %d", &first, &second);
@@ -14,15 +14,7 @@ int main(void)
 	if(first > 0 && second > 0)
 	{
 		
-		if(first > second)
-		{
-			printf("hcf is %d\n", hcf(first, second));
-		}
-		else
-		{
-
-			printf("hcf is %d\n", hcf(second, first));
-		}
+	printf("HCF is %d",hcf(first,second));
 	}
 	else
 	{
@@ -36,23 +28,10 @@ int main(void)
 
 // hcf of two numbers is the largest positive divisior of that two numbers
 int hcf(int x, int y)
-{
-	int quotient, reminder = 1;
-
-	// according to euclid division algorithm one no can be expressed in form of athor no as follows
-	// dividend = (devisor * quotient) + reminder
-	// applying division algorithm to devisor and reminder again treating devisor as dividend and reminder as divisor
-	// until reminder is zero and when the reminder is zero the hcf is devisor at that stage
-	while( reminder > 0)
-	{
-		quotient = x / y;
-		reminder = x - (quotient * y);
-		
-		// hcf is y which is a devisior when reminder is zero
-		x = y;
-		y = reminder;
-	}
-			
+{ 
+	if(y!=0)
+	return hcf(y,x%y);
+	else
 	return x;
 }
 

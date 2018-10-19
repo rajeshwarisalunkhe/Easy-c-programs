@@ -11,7 +11,7 @@ int main(void)
 	for(i = 1;i < 11;i++)
 	{
 		product = num * i;
-		printf("%d\t",product);
+		printf("%d X %d = %d\n",num,i,product);
 	}
 	printf("\n");
 }
